@@ -75,7 +75,7 @@ At most 2 * 104 calls will be made to get, check, and release.
               this.numbers[this.nextAvail] = false;
               const answer = this.nextAvail;
               for (let i = this.nextAvail+1; i < this.length; i++) {
-                  if (this.numbers[i] = true) {
+                  if (this.numbers[i] === true) {
                       this.nextAvail = i;
                       break;
                   }
