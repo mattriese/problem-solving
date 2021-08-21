@@ -1,6 +1,6 @@
-function fibo(n, answers={}) {
+function fibo(n, answers={1:1, 2:1}) {
   if (answers[n]) return answers[n];
-  if (n === 1 || n === 2) return 1;
+  //if (n === 1 || n === 2) return 1;
   answers[n] = fibo(n-1, answers) + fibo(n-2, answers);
   return answers[n];
 }
