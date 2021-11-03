@@ -7,6 +7,33 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 any profit, return 0.
  */
 
-function bestDay(prices) {}
+function bestTime(prices) {
+  let maxProfit = 0;
+  for (let i = 0; i < prices.length - 1; i++) {
+    for (let j = i + 1; j < prices.length; j++) {
+      if (prices[j] - prices[i] > maxProfit) {
+        maxProfit = prices[j] - prices[i];
+      }
+      if (prices[j] <= prices[i]) {
+        i = j - 1;
+        break;
+      }
+    }
+  }
+  return maxProfit;
+}
 
-module.exports = { bestDay };
+module.exports = { bestTime };
+
+/** brute force solution works but times out in leetcode:
+ *   let maxProfit = 0;
+  for (let i = 0; i < prices.length - 1; i++) {
+    for (let j = i + 1; j < prices.length; j++) {
+      if (prices[j] - [prices[i]] > maxProfit) {
+        maxProfit = prices[j] - [prices[i]];
+      }
+    }
+  }
+  return maxProfit;
+}
+ */
