@@ -56,6 +56,7 @@ module.exports = { bestTime };
  *
  *
  * brute force solution works but times out in leetcode:
+ *
  *   let maxProfit = 0;
   for (let i = 0; i < prices.length - 1; i++) {
     for (let j = i + 1; j < prices.length; j++) {
